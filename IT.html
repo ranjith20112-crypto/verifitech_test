@@ -1,38 +1,67 @@
-<!-- it-ites.html - Industry Internal Page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT & ITeS Background Verification - Verifitech</title>
+    <title>VerifiTech | Manufacturing Verification Solutions</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-dark: #0f172a;
-            --primary-blue: #1e40af;
-            --accent-cyan: #06b6d4;
-            --text-gray: #64748b;
-            --bg-light: #f8fafc;
+            --primary-dark: #0a192f;
+            --primary-blue: #112240;
+            --accent-cyan: #00d4ff;
+            --accent-orange: #ff6b35;
+            --text-light: #8892b0;
+            --text-white: #e6f1ff;
+            --glass-bg: rgba(17, 34, 64, 0.7);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            color: #1e293b;
-            padding-top: 76px;
+            background-color: var(--primary-dark);
+            color: var(--text-white);
+            overflow-x: hidden;
         }
 
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--primary-dark);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-cyan);
+            border-radius: 5px;
+        }
+
+        /* Navigation */
         .navbar {
-            background: rgba(15, 23, 42, 0.98);
+            background: transparent;
+            transition: all 0.3s ease;
+            padding: 1.5rem 0;
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 25, 47, 0.95);
             backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
             padding: 1rem 0;
         }
 
         .navbar-brand {
             font-weight: 800;
-            font-size: 1.5rem;
-            color: white !important;
+            font-size: 1.8rem;
+            color: var(--text-white) !important;
+            letter-spacing: -1px;
         }
 
         .navbar-brand span {
@@ -40,98 +69,156 @@
         }
 
         .nav-link {
-            color: rgba(255,255,255,0.9) !important;
+            color: var(--text-light) !important;
             font-weight: 500;
-            padding: 0.5rem 1rem !important;
+            margin: 0 1rem;
+            position: relative;
+            transition: all 0.3s ease;
         }
 
         .nav-link:hover {
             color: var(--accent-cyan) !important;
+            transform: translateY(-2px);
         }
 
-        .industry-hero {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, #1e3a8a 100%);
-            color: white;
-            padding: 100px 0;
+        .btn-custom {
+            background: transparent;
+            border: 1px solid var(--accent-cyan);
+            color: var(--accent-cyan);
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            z-index: 1;
         }
 
-        .industry-hero::before {
-            content: '';
+        .btn-custom:hover {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--accent-cyan);
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .btn-primary-custom {
+            background: var(--accent-cyan);
+            color: var(--primary-dark);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary-custom:hover {
+            background: #00b8e6;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero-bg {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-
-        .breadcrumb-nav {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            display: inline-flex;
-            margin-bottom: 2rem;
-            font-size: 0.875rem;
-        }
-
-        .breadcrumb-nav a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-        }
-
-        .breadcrumb-nav a:hover {
-            color: var(--accent-cyan);
-        }
-
-        .breadcrumb-nav .separator {
-            margin: 0 0.5rem;
-            opacity: 0.5;
-        }
-
-        .breadcrumb-nav .current {
-            color: white;
-            font-weight: 600;
-        }
-
-        .section-padding {
-            padding: 80px 0;
-        }
-
-        .feature-box {
-            background: white;
-            border-radius: 16px;
-            padding: 2rem;
-            border: 1px solid #e2e8f0;
+            width: 100%;
             height: 100%;
-            transition: all 0.3s;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
+            z-index: -1;
         }
 
-        .feature-box:hover {
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            transform: translateY(-5px);
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff 0%, var(--accent-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #eff6ff, #dbeafe);
-            border-radius: 12px;
+        .hero-content .lead {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .floating-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 16px;
+            padding: 1.5rem;
+            position: absolute;
+            animation: float 6s ease-in-out infinite;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .floating-card:nth-child(1) {
+            top: 20%;
+            right: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-card:nth-child(2) {
+            bottom: 30%;
+            right: 20%;
+            animation-delay: 2s;
+        }
+
+        .floating-card:nth-child(3) {
+            top: 50%;
+            right: 5%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-white);
+        }
+
+        .check-icon {
+            width: 24px;
+            height: 24px;
+            background: rgba(0, 212, 255, 0.2);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            color: var(--primary-blue);
-            margin-bottom: 1.5rem;
+            color: var(--accent-cyan);
+            font-size: 0.8rem;
         }
 
-        .stat-highlight {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary-blue));
-            color: white;
-            padding: 2rem;
-            border-radius: 16px;
+        /* Stats Section */
+        .stats-section {
+            padding: 4rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-item {
             text-align: center;
         }
 
@@ -142,89 +229,269 @@
             display: block;
         }
 
-        .workflow-step {
-            display: flex;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-            position: relative;
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        .workflow-step::before {
+        /* Challenges Section */
+        .section-padding {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-white);
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-bottom: 4rem;
+        }
+
+        .challenge-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .challenge-card::before {
             content: '';
             position: absolute;
-            left: 24px;
-            top: 60px;
-            bottom: -20px;
-            width: 2px;
-            background: #e2e8f0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-orange));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
         }
 
-        .workflow-step:last-child::before {
-            display: none;
+        .challenge-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
 
-        .step-icon {
-            width: 50px;
-            height: 50px;
-            background: white;
-            border: 2px solid var(--primary-blue);
-            border-radius: 50%;
+        .challenge-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .challenge-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(255, 107, 53, 0.2));
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--primary-blue);
-            font-weight: 700;
-            flex-shrink: 0;
-            z-index: 1;
-        }
-
-        .btn-primary-custom {
-            background: var(--accent-cyan);
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            text-decoration: none;
-        }
-
-        .btn-primary-custom:hover {
-            background: #0891b2;
-            color: white;
-        }
-
-        .case-study-card {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-
-        .case-study-header {
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
-            color: white;
-            padding: 1.5rem;
-        }
-
-        footer {
-            background: var(--primary-dark);
-            color: white;
-            padding: 60px 0 30px;
-        }
-
-        .footer-link {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-link:hover {
+            font-size: 1.5rem;
             color: var(--accent-cyan);
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .challenge-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-white);
+        }
+
+        .challenge-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* Features Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--accent-cyan);
+            transform: translateX(10px);
+        }
+
+        .feature-icon-main {
+            min-width: 50px;
+            height: 50px;
+            background: var(--primary-blue);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-cyan);
+            font-size: 1.3rem;
+        }
+
+        .feature-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-white);
+        }
+
+        .feature-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* Blue Collar Section */
+        .blue-collar-section {
+            background: linear-gradient(135deg, rgba(17, 34, 64, 0.5) 0%, rgba(10, 25, 47, 0.8) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blue-collar-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-cyan);
+            transition: all 0.3s ease;
+        }
+
+        .checklist-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateX(5px);
+        }
+
+        .checklist-icon {
+            color: var(--accent-cyan);
+            font-size: 1.2rem;
+            margin-top: 2px;
+        }
+
+        .checklist-content h5 {
+            color: var(--text-white);
+            margin-bottom: 0.25rem;
+            font-size: 1.1rem;
+        }
+
+        .checklist-content p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #112240 0%, #0a192f 100%);
+            padding: 6rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(0, 212, 255, 0.03) 10px,
+                rgba(0, 212, 255, 0.03) 20px
+            );
+            animation: slide 20s linear infinite;
+        }
+
+        @keyframes slide {
+            0% { transform: translate(-50%, -50%); }
+            100% { transform: translate(0, 0); }
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 3rem 0 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links a {
+            color: var(--text-light);
+            margin: 0 1rem;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-cyan);
+            transform: translateY(-3px);
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .floating-card {
+                display: none;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
@@ -233,27 +500,18 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Verif<span>i</span>tech</a>
+            <a class="navbar-brand" href="#">Verifi<span>Tech</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon bg-white rounded"></span>
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Solutions</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="identity-verification.html">Identity Verification</a></li>
-                            <li><a class="dropdown-item" href="employment-checks.html">Employment Checks</a></li>
-                            <li><a class="dropdown-item" href="education-verify.html">Education Verify</a></li>
-                            <li><a class="dropdown-item" href="criminal-record.html">Criminal Record</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="industries.html">Industries</a></li>
-                    <li class="nav-item"><a class="nav-link" href="technology.html">Technology</a></li>
-                    <li class="nav-item"><a class="nav-link" href="compliance.html">Compliance</a></li>
-                    <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#solutions">Solutions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#challenges">Challenges</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#workforce">Workforce</a></li>
                     <li class="nav-item ms-lg-3">
-                        <a class="btn btn-primary-custom btn-sm" href="#contact">Get Started</a>
+                        <a href="#contact" class="btn btn-primary-custom">Get Started</a>
                     </li>
                 </ul>
             </div>
@@ -261,45 +519,65 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="industry-hero">
+    <section class="hero-section">
+        <div class="hero-bg"></div>
         <div class="container">
-            <div class="breadcrumb-nav">
-                <a href="index.html">Home</a>
-                <span class="separator">/</span>
-                <a href="industries.html">Industries</a>
-                <span class="separator">/</span>
-                <span class="current">IT & ITeS</span>
-            </div>
-            
-            <div class="row align-items-center">
-                <div class="col-lg-8">
-                    <div class="d-flex align-items-center gap-3 mb-4">
-                        <div style="width: 80px; height: 80px; background: rgba(255,255,255,0.1); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">
-                            <i class="bi bi-laptop"></i>
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-7 hero-content">
+                    <div class="reveal">
+                        <p class="text-uppercase letter-spacing-2 mb-3" style="color: var(--accent-cyan); font-weight: 600; letter-spacing: 3px; font-size: 0.9rem;">
+                            Manufacturing Industry Solutions
+                        </p>
+                        <h1>Verify Before You<br>Manufacture</h1>
+                        <p class="lead">
+                            Advanced risk management solutions for industry leaders. We manufacture trust while you build the nation's economy with confidence and security.
+                        </p>
+                        <div class="d-flex gap-3 flex-wrap">
+                            <a href="#contact" class="btn btn-primary-custom btn-lg">Start Verification</a>
+                            <a href="#solutions" class="btn btn-custom btn-lg">Explore Solutions</a>
                         </div>
-                        <div>
-                            <span class="badge bg-white text-dark mb-2">Industry Solution</span>
-                            <h1 class="display-4 fw-bold mb-0">IT & ITeS</h1>
-                        </div>
-                    </div>
-                    <p class="lead opacity-75 mb-4">Specialized background verification for technology companies. Rapid screening solutions designed for high-volume hiring and specialized skill verification.</p>
-                    <div class="d-flex flex-wrap gap-3">
-                        <a href="#contact" class="btn btn-primary-custom btn-lg">Request Demo</a>
-                        <a href="#" class="btn btn-outline-light btn-lg rounded-pill">Download Datasheet</a>
                     </div>
                 </div>
-                <div class="col-lg-4 mt-5 mt-lg-0">
-                    <div class="row g-3">
-                        <div class="col-6">
-                            <div class="stat-highlight">
-                                <span class="stat-number">24h</span>
-                                <small>Avg Turnaround</small>
+                <div class="col-lg-5 position-relative d-none d-lg-block">
+                    <div class="floating-card">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="bg-success bg-opacity-25 text-success px-3 py-1 rounded" style="color: #00d4ff !important;">
+                                <i class="fas fa-check-circle me-2"></i>Live Check
                             </div>
                         </div>
-                        <div class="col-6">
-                            <div class="stat-highlight">
-                                <span class="stat-number">99.9%</span>
-                                <small>Accuracy</small>
+                        <div class="check-item">
+                            <div class="check-icon"><i class="fas fa-check"></i></div>
+                            <span>Distributor Due Diligence</span>
+                        </div>
+                        <div class="check-item">
+                            <div class="check-icon"><i class="fas fa-check"></i></div>
+                            <span>Risk Assessment Protocol</span>
+                        </div>
+                        <div class="check-item">
+                            <div class="check-icon"><i class="fas fa-check"></i></div>
+                            <span>Blue Collar Verification</span>
+                        </div>
+                    </div>
+
+                    <div class="floating-card">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span style="color: var(--text-light);">Verification Rate</span>
+                            <span style="color: var(--accent-cyan); font-weight: 700;">99.8%</span>
+                        </div>
+                        <div class="progress" style="height: 6px; background: rgba(255,255,255,0.1);">
+                            <div class="progress-bar" style="width: 99.8%; background: var(--accent-cyan);"></div>
+                        </div>
+                    </div>
+
+                    <div class="floating-card">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center" 
+                                 style="width: 50px; height: 50px; background: rgba(255,107,53,0.2); color: var(--accent-orange);">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div>
+                                <div style="font-size: 0.8rem; color: var(--text-light);">Fraud Prevented</div>
+                                <div style="font-size: 1.2rem; font-weight: 700; color: var(--text-white);">₹2,450Cr+</div>
                             </div>
                         </div>
                     </div>
@@ -308,117 +586,227 @@
         </div>
     </section>
 
-    <!-- Key Features -->
-    <section class="section-padding">
+    <!-- Stats Section -->
+    <section class="stats-section">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="h1 fw-bold mb-3">Built for Tech Hiring</h2>
-                <p class="text-muted lead">Comprehensive verification suite addressing unique challenges of IT sector recruitment</p>
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0 reveal">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="2000">0</span>
+                        <span class="stat-label">Companies Trust Us</span>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0 reveal">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="10">0</span>
+                        <span class="stat-label">Languages Supported</span>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="99">0</span>
+                        <span class="stat-label">Accuracy Rate %</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenges Section -->
+    <section class="section-padding" id="challenges">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h2 class="section-title reveal">Manufacturing Challenges<br>We Solve</h2>
+                    <p class="section-subtitle reveal">
+                        Warehouse thefts, fake invoices, and supply chain vulnerabilities are critical threats to your manufacturing operations.
+                    </p>
+                </div>
             </div>
 
             <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-box">
-                        <div class="feature-icon">
-                            <i class="bi bi-code-square"></i>
+                <div class="col-md-4 reveal">
+                    <div class="challenge-card">
+                        <div class="challenge-icon">
+                            <i class="fas fa-user-secret"></i>
                         </div>
-                        <h4>Technical Skills Verification</h4>
-                        <p class="text-muted">Validate programming languages, frameworks, and technical competencies claimed by candidates through automated assessments.</p>
+                        <h3>Internal Fraud Prevention</h3>
+                        <p>Comprehensive background screening detects dishonest candidates early. We identify fraud history, financial misconduct, and criminal records before they enter your workforce.</p>
                     </div>
                 </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-box">
-                        <div class="feature-icon">
-                            <i class="bi bi-building-check"></i>
+                <div class="col-md-4 reveal">
+                    <div class="challenge-card">
+                        <div class="challenge-icon">
+                            <i class="fas fa-network-wired"></i>
                         </div>
-                        <h4>Previous Employer Verification</h4>
-                        <p class="text-muted">Direct verification with IT companies and startups, including designation, tenure, and project validations.</p>
+                        <h3>Vendor Risk Intelligence</h3>
+                        <p>Single-dashboard visibility across all distributors and suppliers. Real-time financial stability monitoring prevents operational disruptions and supply chain breakdowns.</p>
                     </div>
                 </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-box">
-                        <div class="feature-icon">
-                            <i class="bi bi-mortarboard"></i>
+                <div class="col-md-4 reveal">
+                    <div class="challenge-card">
+                        <div class="challenge-icon">
+                            <i class="fas fa-file-contract"></i>
                         </div>
-                        <h4>Global Education Check</h4>
-                        <p class="text-muted">Verify degrees and certifications from international universities and online learning platforms like Coursera, Udemy.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-box">
-                        <div class="feature-icon">
-                            <i class="bi bi-shield-lock"></i>
-                        </div>
-                        <h4>Data Security Clearance</h4>
-                        <p class="text-muted">Specialized checks for candidates handling sensitive data, including previous NDA violations and security protocols.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-box">
-                        <div class="feature-icon">
-                            <i class="bi bi-clock-history"></i>
-                        </div>
-                        <h4>Rapid Bulk Processing</h4>
-                        <p class="text-muted">Process hundreds of candidates simultaneously with our API integration, perfect for campus hiring drives.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-box">
-                        <div class="feature-icon">
-                            <i class="bi bi-globe"></i>
-                        </div>
-                        <h4>Remote Worker Verification</h4>
-                        <p class="text-muted">Digital-first verification process designed for distributed teams and work-from-home employees.</p>
+                        <h3>Regulatory Compliance</h3>
+                        <p>Automated GST verification, license validation, and regulatory checks ensure every vendor meets statutory requirements, protecting you from legal liabilities.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Workflow -->
-    <section class="section-padding bg-light">
+    <!-- Features Section -->
+    <section class="section-padding" id="features" style="background: rgba(255,255,255,0.02);">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 reveal">
+                    <h2 class="section-title">Complete Verification<br>Ecosystem</h2>
+                    <p class="section-subtitle mb-0">
+                        End-to-end risk management solutions tailored for manufacturing environments.
+                    </p>
+                </div>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-item reveal">
+                    <div class="feature-icon-main">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Due Diligence Checks</h4>
+                        <p>Comprehensive distributor and supplier verification with financial health monitoring.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item reveal">
+                    <div class="feature-icon-main">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Risk Management</h4>
+                        <p>AI-powered risk assessment algorithms identifying potential threats before they materialize.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item reveal">
+                    <div class="feature-icon-main">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Workforce Verification</h4>
+                        <p>Blue-collar employee screening including criminal records, identity, and employment history.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item reveal">
+                    <div class="feature-icon-main">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Court Record Checks</h4>
+                        <p>Pan-India litigation screening across all district and high courts for complete legal clarity.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item reveal">
+                    <div class="feature-icon-main">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Identity Verification</h4>
+                        <p>Multi-layered identity authentication using government databases and biometric matching.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item reveal">
+                    <div class="feature-icon-main">
+                        <i class="fas fa-police"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Police Verification</h4>
+                        <p>Streamlined police clearance certificates for all manufacturing facility locations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blue Collar Section -->
+    <section class="section-padding blue-collar-section" id="workforce">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-5 mb-5 mb-lg-0">
-                    <h2 class="h1 fw-bold mb-4">Streamlined for Speed</h2>
-                    <p class="text-muted lead mb-4">Our IT-optimized workflow ensures quick turnaround without compromising thoroughness.</p>
-                    <a href="#" class="btn btn-primary-custom">View API Documentation</a>
+                <div class="col-lg-6 mb-5 mb-lg-0 reveal">
+                    <div class="position-relative">
+                        <div style="background: linear-gradient(135deg, #1e3a5f 0%, #0a192f 100%); border-radius: 20px; padding: 3rem; border: 1px solid rgba(0,212,255,0.2);">
+                            <div class="text-center mb-4">
+                                <i class="fas fa-users-cog" style="font-size: 4rem; color: var(--accent-cyan); opacity: 0.8;"></i>
+                            </div>
+                            <div class="row g-3">
+                                <div class="col-6">
+                                    <div class="text-center p-3" style="background: rgba(255,255,255,0.05); border-radius: 10px;">
+                                        <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-cyan);">Pan India</div>
+                                        <div style="font-size: 0.8rem; color: var(--text-light);">Coverage</div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="text-center p-3" style="background: rgba(255,255,255,0.05); border-radius: 10px;">
+                                        <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-orange);">AI/ML</div>
+                                        <div style="font-size: 0.8rem; color: var(--text-light);">Powered</div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="text-center p-3" style="background: rgba(255,255,255,0.05); border-radius: 10px;">
+                                        <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-cyan);">10+</div>
+                                        <div style="font-size: 0.8rem; color: var(--text-light);">Languages</div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="text-center p-3" style="background: rgba(255,255,255,0.05); border-radius: 10px;">
+                                        <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-orange);">24/7</div>
+                                        <div style="font-size: 0.8rem; color: var(--text-light);">Support</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-7">
-                    <div class="workflow-step">
-                        <div class="step-icon">1</div>
-                        <div>
-                            <h4 class="mb-2">Automated Data Collection</h4>
-                            <p class="text-muted mb-0">Candidates submit details via mobile-friendly portal. Resume parsing auto-fills employment history.</p>
+                <div class="col-lg-6 ps-lg-5 reveal">
+                    <p class="text-uppercase mb-3" style="color: var(--accent-cyan); font-weight: 600; letter-spacing: 2px; font-size: 0.9rem;">
+                        Blue-Collar Verifications
+                    </p>
+                    <h2 class="section-title">Recruit Trust,<br>Prevent Theft</h2>
+                    <p style="color: var(--text-light); margin-bottom: 2rem;">
+                        Your workforce is your foundation. We manufacture trust while you manufacture products. Our thorough verification ensures theft-free operations across all levels.
+                    </p>
+
+                    <div class="checklist-item">
+                        <div class="checklist-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="checklist-content">
+                            <h5>Comprehensive Workforce Screening</h5>
+                            <p>Production workers, technicians, warehouse staff, and contract employees—all verified.</p>
                         </div>
                     </div>
 
-                    <div class="workflow-step">
-                        <div class="step-icon">2</div>
-                        <div>
-                            <h4 class="mb-2">AI-Powered Verification</h4>
-                            <p class="text-muted mb-0">Machine learning algorithms cross-reference 200+ databases for instant identity and education checks.</p>
+                    <div class="checklist-item">
+                        <div class="checklist-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <div class="checklist-content">
+                            <h5>Pan-India Multilingual Support</h5>
+                            <p>Seamless verification across 10+ regional languages for diverse manufacturing hubs.</p>
                         </div>
                     </div>
 
-                    <div class="workflow-step">
-                        <div class="step-icon">3</div>
-                        <div>
-                            <h4 class="mb-2">Technical Assessment Integration</h4>
-                            <p class="text-muted mb-0">Optional coding tests and skill assessments integrated directly into the verification flow.</p>
+                    <div class="checklist-item">
+                        <div class="checklist-icon">
+                            <i class="fas fa-brain"></i>
                         </div>
-                    </div>
-
-                    <div class="workflow-step">
-                        <div class="step-icon">4</div>
-                        <div>
-                            <h4 class="mb-2">Real-time Dashboard</h4>
-                            <p class="text-muted mb-0">Track verification status live. Receive instant notifications via Slack, Teams, or webhooks.</p>
+                        <div class="checklist-content">
+                            <h5>AI/ML Database Screening</h5>
+                            <p>Highest accuracy through machine learning algorithms and comprehensive database checks.</p>
                         </div>
                     </div>
                 </div>
@@ -426,122 +814,131 @@
         </div>
     </section>
 
-    <!-- Case Study -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="case-study-card">
-                        <div class="case-study-header">
-                            <div class="d-flex align-items-center gap-3">
-                                <i class="bi bi-building fs-1"></i>
-                                <div>
-                                    <h3 class="mb-1">Case Study</h3>
-                                    <p class="mb-0 opacity-75">Major IT Services Company</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-4">
-                            <div class="row g-4 mb-4">
-                                <div class="col-md-4 text-center">
-                                    <h2 class="text-primary fw-bold">10,000+</h2>
-                                    <p class="text-muted mb-0">Checks per month</p>
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <h2 class="text-primary fw-bold">18 hours</h2>
-                                    <p class="text-muted mb-0">Average turnaround</p>
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <h2 class="text-primary fw-bold">40%</h2>
-                                    <p class="text-muted mb-0">Cost reduction</p>
-                                </div>
-                            </div>
-                            <p class="text-muted mb-4">"Verifitech's API integration with our Workday ATS reduced our verification time from 5 days to 18 hours. Their technical skills verification helped us identify discrepancies in 12% of senior developer applications, saving us from costly bad hires."</p>
-                            <div class="d-flex align-items-center gap-3">
-                                <div style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">VP</div>
-                                <div>
-                                    <div class="fw-bold">Vikram Patel</div>
-                                    <div class="text-muted small">VP Talent Acquisition, TechCorp Global</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Compliance -->
-    <section class="section-padding bg-light">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="h1 fw-bold mb-3">IT Sector Compliance</h2>
-                <p class="text-muted">Meeting industry-specific regulatory requirements</p>
-            </div>
-
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="feature-box text-center">
-                        <i class="bi bi-shield-check text-success fs-1 mb-3"></i>
-                        <h4>ISO 27001</h4>
-                        <p class="text-muted mb-0">Information Security Management certification for data handling</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-box text-center">
-                        <i class="bi bi-file-lock text-primary fs-1 mb-3"></i>
-                        <h4>NDA Verification</h4>
-                        <p class="text-muted mb-0">Previous non-disclosure agreement compliance checks</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-box text-center">
-                        <i class="bi bi-cpu text-warning fs-1 mb-3"></i>
-                        <h4>IP Protection</h4>
-                        <p class="text-muted mb-0">Intellectual property rights and patent conflict screening</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="py-5" style="background: linear-gradient(135deg, var(--primary-dark) 0%, #1e3a8a 100%); color: white;">
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
         <div class="container text-center">
-            <h3 class="mb-4">Ready to Streamline Your Tech Hiring?</h3>
-            <p class="mb-4 opacity-75">Join 200+ IT companies using Verifitech for rapid, accurate background verification.</p>
-            <a href="contact.html" class="btn btn-primary-custom btn-lg me-3">Schedule Demo</a>
-            <a href="#" class="btn btn-outline-light btn-lg rounded-pill">View Pricing</a>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 cta-content reveal">
+                    <h2 class="section-title mb-4">Ready to Secure Your Manufacturing Operations?</h2>
+                    <p class="lead mb-5" style="color: var(--text-light);">
+                        Join 2,000+ manufacturing leaders who trust VerifiTech for comprehensive risk management and verification solutions.
+                    </p>
+                    <div class="d-flex gap-3 justify-content-center flex-wrap">
+                        <a href="#" class="btn btn-primary-custom btn-lg px-5">Schedule Demo</a>
+                        <a href="#" class="btn btn-custom btn-lg px-5">Contact Sales</a>
+                    </div>
+                    <p class="mt-4" style="color: var(--text-light); font-size: 0.9rem;">
+                        <i class="fas fa-phone-alt me-2" style="color: var(--accent-cyan);"></i> 
+                        Call us: +91-XXXX-XXX-XXX
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <h4>Verif<span style="color: var(--accent-cyan);">i</span>tech</h4>
-                    <p class="text-white-50">Enterprise background verification solutions.</p>
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <a class="navbar-brand" href="#">Verifi<span>Tech</span></a>
+                    <p class="mt-2 mb-0" style="color: var(--text-light); font-size: 0.9rem;">
+                        Manufacturing Trust at Scale
+                    </p>
                 </div>
-                <div class="col-6 col-md-3">
-                    <h6 class="text-white">Navigate</h6>
-                    <a href="industries.html" class="footer-link">All Industries</a>
-                    <a href="bfsi.html" class="footer-link">BFSI</a>
-                    <a href="healthcare.html" class="footer-link">Healthcare</a>
-                    <a href="retail.html" class="footer-link">Retail</a>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
                 </div>
-                <div class="col-6 col-md-3">
-                    <h6 class="text-white">Resources</h6>
-                    <a href="#" class="footer-link">API Docs</a>
-                    <a href="#" class="footer-link">Integration Guide</a>
-                    <a href="#" class="footer-link">Support</a>
+                <div class="col-md-4 text-center text-md-end">
+                    <p class="mb-0" style="color: var(--text-light); font-size: 0.9rem;">
+                        © 2026 VerifiTech. All rights reserved.
+                    </p>
                 </div>
             </div>
-            <hr class="my-4 border-secondary">
-            <p class="text-white-50 mb-0">&copy; 2024 Verifitech. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Counter animation
+        const counters = document.querySelectorAll('.stat-number');
+        const speed = 200;
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const inc = target / speed;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + inc);
+                    setTimeout(animateCounters, 20);
+                } else {
+                    counter.innerText = target + (target === 2000 ? '+' : (target === 99 ? '%' : '+'));
+                }
+            });
+        };
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    
+                    // Trigger counters when stats section is visible
+                    if (entry.target.closest('.stats-section')) {
+                        animateCounters();
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Parallax effect for hero background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroBg = document.querySelector('.hero-bg');
+            if (heroBg) {
+                heroBg.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+    </script>
 </body>
 </html>
