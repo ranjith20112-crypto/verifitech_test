@@ -1,0 +1,547 @@
+<!-- it-ites.html - Industry Internal Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT & ITeS Background Verification - Verifitech</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #0f172a;
+            --primary-blue: #1e40af;
+            --accent-cyan: #06b6d4;
+            --text-gray: #64748b;
+            --bg-light: #f8fafc;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            padding-top: 76px;
+        }
+
+        .navbar {
+            background: rgba(15, 23, 42, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: white !important;
+        }
+
+        .navbar-brand span {
+            color: var(--accent-cyan);
+        }
+
+        .nav-link {
+            color: rgba(255,255,255,0.9) !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-cyan) !important;
+        }
+
+        .industry-hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #1e3a8a 100%);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .industry-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .breadcrumb-nav {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            display: inline-flex;
+            margin-bottom: 2rem;
+            font-size: 0.875rem;
+        }
+
+        .breadcrumb-nav a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+        }
+
+        .breadcrumb-nav a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .breadcrumb-nav .separator {
+            margin: 0 0.5rem;
+            opacity: 0.5;
+        }
+
+        .breadcrumb-nav .current {
+            color: white;
+            font-weight: 600;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .feature-box {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid #e2e8f0;
+            height: 100%;
+            transition: all 0.3s;
+        }
+
+        .feature-box:hover {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-highlight {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-blue));
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent-cyan);
+            display: block;
+        }
+
+        .workflow-step {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .workflow-step::before {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 60px;
+            bottom: -20px;
+            width: 2px;
+            background: #e2e8f0;
+        }
+
+        .workflow-step:last-child::before {
+            display: none;
+        }
+
+        .step-icon {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border: 2px solid var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-blue);
+            font-weight: 700;
+            flex-shrink: 0;
+            z-index: 1;
+        }
+
+        .btn-primary-custom {
+            background: var(--accent-cyan);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .btn-primary-custom:hover {
+            background: #0891b2;
+            color: white;
+        }
+
+        .case-study-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .case-study-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
+            color: white;
+            padding: 1.5rem;
+        }
+
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-link {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-link:hover {
+            color: var(--accent-cyan);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Verif<span>i</span>tech</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon bg-white rounded"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Solutions</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="identity-verification.html">Identity Verification</a></li>
+                            <li><a class="dropdown-item" href="employment-checks.html">Employment Checks</a></li>
+                            <li><a class="dropdown-item" href="education-verify.html">Education Verify</a></li>
+                            <li><a class="dropdown-item" href="criminal-record.html">Criminal Record</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="industries.html">Industries</a></li>
+                    <li class="nav-item"><a class="nav-link" href="technology.html">Technology</a></li>
+                    <li class="nav-item"><a class="nav-link" href="compliance.html">Compliance</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary-custom btn-sm" href="#contact">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="industry-hero">
+        <div class="container">
+            <div class="breadcrumb-nav">
+                <a href="index.html">Home</a>
+                <span class="separator">/</span>
+                <a href="industries.html">Industries</a>
+                <span class="separator">/</span>
+                <span class="current">IT & ITeS</span>
+            </div>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <div style="width: 80px; height: 80px; background: rgba(255,255,255,0.1); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">
+                            <i class="bi bi-laptop"></i>
+                        </div>
+                        <div>
+                            <span class="badge bg-white text-dark mb-2">Industry Solution</span>
+                            <h1 class="display-4 fw-bold mb-0">IT & ITeS</h1>
+                        </div>
+                    </div>
+                    <p class="lead opacity-75 mb-4">Specialized background verification for technology companies. Rapid screening solutions designed for high-volume hiring and specialized skill verification.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#contact" class="btn btn-primary-custom btn-lg">Request Demo</a>
+                        <a href="#" class="btn btn-outline-light btn-lg rounded-pill">Download Datasheet</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mt-5 mt-lg-0">
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="stat-highlight">
+                                <span class="stat-number">24h</span>
+                                <small>Avg Turnaround</small>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stat-highlight">
+                                <span class="stat-number">99.9%</span>
+                                <small>Accuracy</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="h1 fw-bold mb-3">Built for Tech Hiring</h2>
+                <p class="text-muted lead">Comprehensive verification suite addressing unique challenges of IT sector recruitment</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-code-square"></i>
+                        </div>
+                        <h4>Technical Skills Verification</h4>
+                        <p class="text-muted">Validate programming languages, frameworks, and technical competencies claimed by candidates through automated assessments.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-building-check"></i>
+                        </div>
+                        <h4>Previous Employer Verification</h4>
+                        <p class="text-muted">Direct verification with IT companies and startups, including designation, tenure, and project validations.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-mortarboard"></i>
+                        </div>
+                        <h4>Global Education Check</h4>
+                        <p class="text-muted">Verify degrees and certifications from international universities and online learning platforms like Coursera, Udemy.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-shield-lock"></i>
+                        </div>
+                        <h4>Data Security Clearance</h4>
+                        <p class="text-muted">Specialized checks for candidates handling sensitive data, including previous NDA violations and security protocols.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-clock-history"></i>
+                        </div>
+                        <h4>Rapid Bulk Processing</h4>
+                        <p class="text-muted">Process hundreds of candidates simultaneously with our API integration, perfect for campus hiring drives.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-globe"></i>
+                        </div>
+                        <h4>Remote Worker Verification</h4>
+                        <p class="text-muted">Digital-first verification process designed for distributed teams and work-from-home employees.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <h2 class="h1 fw-bold mb-4">Streamlined for Speed</h2>
+                    <p class="text-muted lead mb-4">Our IT-optimized workflow ensures quick turnaround without compromising thoroughness.</p>
+                    <a href="#" class="btn btn-primary-custom">View API Documentation</a>
+                </div>
+                <div class="col-lg-7">
+                    <div class="workflow-step">
+                        <div class="step-icon">1</div>
+                        <div>
+                            <h4 class="mb-2">Automated Data Collection</h4>
+                            <p class="text-muted mb-0">Candidates submit details via mobile-friendly portal. Resume parsing auto-fills employment history.</p>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-icon">2</div>
+                        <div>
+                            <h4 class="mb-2">AI-Powered Verification</h4>
+                            <p class="text-muted mb-0">Machine learning algorithms cross-reference 200+ databases for instant identity and education checks.</p>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-icon">3</div>
+                        <div>
+                            <h4 class="mb-2">Technical Assessment Integration</h4>
+                            <p class="text-muted mb-0">Optional coding tests and skill assessments integrated directly into the verification flow.</p>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-icon">4</div>
+                        <div>
+                            <h4 class="mb-2">Real-time Dashboard</h4>
+                            <p class="text-muted mb-0">Track verification status live. Receive instant notifications via Slack, Teams, or webhooks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="case-study-card">
+                        <div class="case-study-header">
+                            <div class="d-flex align-items-center gap-3">
+                                <i class="bi bi-building fs-1"></i>
+                                <div>
+                                    <h3 class="mb-1">Case Study</h3>
+                                    <p class="mb-0 opacity-75">Major IT Services Company</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="row g-4 mb-4">
+                                <div class="col-md-4 text-center">
+                                    <h2 class="text-primary fw-bold">10,000+</h2>
+                                    <p class="text-muted mb-0">Checks per month</p>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <h2 class="text-primary fw-bold">18 hours</h2>
+                                    <p class="text-muted mb-0">Average turnaround</p>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <h2 class="text-primary fw-bold">40%</h2>
+                                    <p class="text-muted mb-0">Cost reduction</p>
+                                </div>
+                            </div>
+                            <p class="text-muted mb-4">"Verifitech's API integration with our Workday ATS reduced our verification time from 5 days to 18 hours. Their technical skills verification helped us identify discrepancies in 12% of senior developer applications, saving us from costly bad hires."</p>
+                            <div class="d-flex align-items-center gap-3">
+                                <div style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">VP</div>
+                                <div>
+                                    <div class="fw-bold">Vikram Patel</div>
+                                    <div class="text-muted small">VP Talent Acquisition, TechCorp Global</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compliance -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="h1 fw-bold mb-3">IT Sector Compliance</h2>
+                <p class="text-muted">Meeting industry-specific regulatory requirements</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-box text-center">
+                        <i class="bi bi-shield-check text-success fs-1 mb-3"></i>
+                        <h4>ISO 27001</h4>
+                        <p class="text-muted mb-0">Information Security Management certification for data handling</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box text-center">
+                        <i class="bi bi-file-lock text-primary fs-1 mb-3"></i>
+                        <h4>NDA Verification</h4>
+                        <p class="text-muted mb-0">Previous non-disclosure agreement compliance checks</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box text-center">
+                        <i class="bi bi-cpu text-warning fs-1 mb-3"></i>
+                        <h4>IP Protection</h4>
+                        <p class="text-muted mb-0">Intellectual property rights and patent conflict screening</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-5" style="background: linear-gradient(135deg, var(--primary-dark) 0%, #1e3a8a 100%); color: white;">
+        <div class="container text-center">
+            <h3 class="mb-4">Ready to Streamline Your Tech Hiring?</h3>
+            <p class="mb-4 opacity-75">Join 200+ IT companies using Verifitech for rapid, accurate background verification.</p>
+            <a href="contact.html" class="btn btn-primary-custom btn-lg me-3">Schedule Demo</a>
+            <a href="#" class="btn btn-outline-light btn-lg rounded-pill">View Pricing</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4>Verif<span style="color: var(--accent-cyan);">i</span>tech</h4>
+                    <p class="text-white-50">Enterprise background verification solutions.</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h6 class="text-white">Navigate</h6>
+                    <a href="industries.html" class="footer-link">All Industries</a>
+                    <a href="bfsi.html" class="footer-link">BFSI</a>
+                    <a href="healthcare.html" class="footer-link">Healthcare</a>
+                    <a href="retail.html" class="footer-link">Retail</a>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h6 class="text-white">Resources</h6>
+                    <a href="#" class="footer-link">API Docs</a>
+                    <a href="#" class="footer-link">Integration Guide</a>
+                    <a href="#" class="footer-link">Support</a>
+                </div>
+            </div>
+            <hr class="my-4 border-secondary">
+            <p class="text-white-50 mb-0">&copy; 2024 Verifitech. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
